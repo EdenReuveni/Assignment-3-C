@@ -11,14 +11,14 @@ num2=*(arr+j+1);
 num1=num2;
 }}
 
-void print1(int arr[]){
+void print1(int* ptr){
 
     for(int i=0;i<50;i++){
         if(i==49){
-            printf("%d",*(arr+i));
+            printf("%d",*(ptr+i));
         }
         else{
-        printf("%d,",*(arr+i));
+        printf("%d,",*(ptr+i));
         }
     }
 
@@ -49,12 +49,7 @@ for(int i=1;i<len;i++){
 }
     
 }   
-
-
-
-
 int main(int argc,char* argv[]){
-
 FILE *myFile;
 myFile = fopen(argv[1], "r");
 //read file into array
@@ -66,11 +61,5 @@ int i;
     }
     insertion_sort(numberArray,50);
     print1(numberArray);
-
-
-
-
-
-
     return 0;
 }
