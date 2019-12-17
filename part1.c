@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#define length 50
 
 void shift_element(int* arr, int i){
 int num1=*(arr);
@@ -13,8 +14,8 @@ num1=num2;
 
 void print1(int* ptr){
 
-    for(int i=0;i<50;i++){
-        if(i==49){
+    for(int i=0;i<length;i++){
+        if(i==length-1){
             printf("%d",*(ptr+i));
         }
         else{
@@ -30,10 +31,6 @@ void swap12(int* ptr,int* ptr2){
     *(ptr)=num;
 }
 
-// [4,3,2,1]
-// [3,4,2,1]  i=1
-// [2,3,4,1] ,           i=2 ,j=1
-//  [2,3,1,4]                      i=3
 void insertion_sort(int* arr , int len){
 int j=0;
 for(int i=1;i<len;i++){
@@ -46,20 +43,18 @@ for(int i=1;i<len;i++){
             j--;
         }
     }
-}
-    
 }   
-int main(int argc,char* argv[]){
-FILE *myFile;
-myFile = fopen(argv[1], "r");
+}
+
+int main(){
 //read file into array
-int numberArray[50];
+int numberArray[length]={0};
 int i;
-  for (i = 0; i < 50; i++)
+  for (i = 0; i < length; i++)
     {
-        fscanf(myFile, "%d", &numberArray[i]);
+        scanf("%d", &numberArray[i]);
     }
-    insertion_sort(numberArray,50);
-    print1(numberArray);
+     insertion_sort(numberArray,length);
+     print1(numberArray);
     return 0;
 }
