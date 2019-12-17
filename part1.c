@@ -47,7 +47,6 @@ for(int i=1;i<len;i++){
 }
 
 int main(){
-//read file into array
 int numberArray[length]={0};
 int i;
   for (i = 0; i < length; i++)
