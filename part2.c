@@ -28,8 +28,8 @@
  int substring(char* str1, char* str2){
     int i=0,j=0;
     while(str1[i] != 0){
-        j=0;                  //i=0    j=0
-        if(str1[i]==str2[j]){ //chis   cat  
+        j=0;                  
+        if(str1[i]==str2[j]){  
             while(str1[i]!=0 && str2[j]!=0){
                  j++;
                  i++;
@@ -86,7 +86,7 @@ int main() {
     char buffer;
     char Line[MAX_PER_ROW];
     char check[WORD_LENGTH];
-    char similar1[WORD_LENGTH];
+    char similarArray[WORD_LENGTH];
     int i=0,j=0;
     scanf("%c",&letter);
     while(letter!=' '){
@@ -116,24 +116,17 @@ int main() {
  
    }
    }
-
-   //a test [this]
      if(letter == 'b'){
         for(i=0;i<MAX_ROWS ;i++){
-            while(buffer!='\n' && j<30 && buffer!=0 && buffer!='\t' && buffer!=' '){
-                similar1[j++]=buffer;
+            while(buffer!='\n' && j<WORD_LENGTH && buffer!=0 && buffer!='\t' && buffer!=' '){
+                similarArray[j++]=buffer;
                 scanf("%c",&buffer);
             }
-              similar1[j]=0;
-              similar(similar1,check,1);
+              similarAraay[j]=0;
+              similar(similarAraay,check,1);
               j=0;
               scanf("%c",&buffer);
         }
-
-    
-     
      return 0;
  }
 }
-
-
