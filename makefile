@@ -1,11 +1,14 @@
-all: part1 part2  
+CC=gcc
+FLAG=-Wall
+AR=ar
+fPIC=-fPIC
+all: main_isort main_txtfind 
 
-part1:
-	gcc -o isort part1.c
-part2:
-	gcc -o txtfind part2.c
-	
-.PHONY: all clean
+main_isort:   
+	$(CC) $(FLAG) part1.c -g -o isort
+main_txtfind:  
+	$(CC) $(FLAG) part2.c -g -o txtfind
 
+.PHONY:  isort txtfind clean all
 clean:
-	rm -f *.o *.a *.so mains maind
+	rm -f *.o *.a *.so isort txtfind

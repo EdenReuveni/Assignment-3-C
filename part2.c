@@ -122,8 +122,8 @@ int main() {
                 similarArray[j++]=buffer;
                 scanf("%c",&buffer);
             }
-              similarAraay[j]=0;
-              similar(similarAraay,check,1);
+              similarArray[j]=0;
+              similar(similarArray,check,1);
               j=0;
               scanf("%c",&buffer);
         }
